@@ -1,0 +1,17 @@
+{
+  "name": "nodejs_web_teach",
+  "description": "Nodejs Web Server 进高校",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.6"
+  },
+  "scripts": {
+    "dev-http": "node ./src/http/http_server.js",
+    "dev-web-step1": "node ./src/web/web_server_step1.js",
+    "dev-web-step2": "node ./src/web/web_server_step2.js",
+    "dev-cycle": "node ./src/koa/index.js"
+  }
+}
