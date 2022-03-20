@@ -14,7 +14,7 @@ function handler(req, res) {
 
   // 匹配请求
   if (method === 'GET' && pathname === '/api/v1/user') {
-    const name = query?.name;
+    const name = query.name;
     // 数据的文件路径
     const dataPath = path.join(__dirname, `../data/${name}.json`);
 

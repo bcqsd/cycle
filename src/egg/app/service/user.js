@@ -26,7 +26,7 @@ module.exports = class UserService extends Service {
     const ctx = this.ctx;
 
     // 数据校验
-    if (!insert?.name) {
+    if (!insert.name) {
       ctx.throw('422', 'name required');
     }
 

@@ -6,7 +6,7 @@ const util = require('util');
 const readFile = util.promisify(fs.readFile);
 
 module.exports = async ctx => {
-  const name = ctx.query?.name;
+  const name = ctx.query.name;
   const dataPath = path.join(__dirname, `../../data/${name}.json`);
 
   try {

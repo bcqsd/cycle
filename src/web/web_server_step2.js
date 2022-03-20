@@ -15,17 +15,17 @@ function handler(req, res) {
     console.error(`[Error] ${req.method} ${req.url}`, err);
 
     res.statusCode = status;
-    res.statusMessage = err?.message;
+    res.statusMessage = err.message;
 
     res.setHeader('Content-Type', 'application/json');
     res.end(JSON.stringify({
       success: false,
-      message: err?.message,
+      message: err.message,
     }));
   }
 
   if (method === 'GET' && pathname === '/api/v1/user') {
-    const name = query?.name;
+    const name = query.name;
     const dataPath = path.join(__dirname, `../data/${name}.json`);
 
     fs.readFile(dataPath, 'utf8', (err, data) => {
