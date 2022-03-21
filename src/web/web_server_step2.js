@@ -60,6 +60,8 @@ function handler(req, res) {
 
       // TODO 数据校验（没有name属性返回“name required”及422状态）422状态码代表什么？
       // TODO 将输入的name作为文件名存储输入的内容，注意错误情况的处理
+      // 写文件文档: https://nodejs.org/dist/latest-v16.x/docs/api/fs.html#filehandlewritefiledata-options
+      // fs.writeFile(path, content, callback);
     });
     return;
   }
