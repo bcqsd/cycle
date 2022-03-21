@@ -19,6 +19,11 @@ $ npm i
 $ npm run dev-http
 ```
 
+### 查看代码
+```bash
+./src/http/http_server.js
+```
+
 ### 查看效果
 ![预览](https://img.alicdn.com/imgextra/i2/O1CN01c34Vu11WJn3RQJ2Ks_!!6000000002768-0-tps-360-368.jpg)
 
