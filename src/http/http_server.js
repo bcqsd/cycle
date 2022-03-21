@@ -4,6 +4,7 @@ const http = require('http');
 
 // 处理逻辑
 function handler(req, res) {
+  res.setHeader('Content-Type', 'text/html');
   res.end('Hello Node\n');
 }
 
