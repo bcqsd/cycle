@@ -1,7 +1,8 @@
 {
   "module": "es6",
   "name": "nodejs_web_teach",
-  "description": "Nodejs Web Server 进高校",
+  "description": "根据课程研究封装一个node后端框架",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": ""
