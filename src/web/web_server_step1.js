@@ -22,7 +22,7 @@ function handler(req, res) {
     fs.readFile(dataPath, 'utf8', (err, data) => {
       // 有错误返回404
       if (err) {
-        // TODO 返回“no user”及404的状态
+        res.statusCode=404
       }
 
       // 返回json格式数据
@@ -35,7 +35,9 @@ function handler(req, res) {
     return;
   }
 
-  // TODO 其他情况兜底404
+  else{
+    res.statusCode=404
+  }
 }
 
 // 启动服务

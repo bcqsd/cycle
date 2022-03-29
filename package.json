@@ -1,4 +1,5 @@
 {
+  "module": "es6",
   "name": "nodejs_web_teach",
   "description": "Nodejs Web Server 进高校",
   "repository": {
