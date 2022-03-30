@@ -11,6 +11,6 @@
     "@types/node": "^17.0.6"
   },
   "scripts": {
-       
+       "push": "git push origin master:main"
   }
 }
