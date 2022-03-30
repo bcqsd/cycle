@@ -73,10 +73,38 @@ export class Cycle {
   }
   //处理函数
   handler(req, res) {
-     const ctx=this._patch(req,res)
-     let i=0
-     const next=()=>{
-       
-     }
+    const ctx = this._patch(req, res)
+    let i = 0
+    const next = () => {
+      const rule = this.middlewares[i++];
+      // 回溯完成
+      if (!rule) return Promise.resolve()
+      //路由匹配失败---》不执行该中间件
+      if (!this._match(ctx, rule)) return next()
+      try {
+        return Promise.resolve(rule.fn(ctx, next))
+      } catch (err) {
+        return Promise.reject(err)
+      }
+    }
+    //执行
+    next().then(() => {
+      if (typeof ctx.body == 'string') {
+        res.end(ctx.body)
+      } else if (Buffer.isBuffer(ctx.body)) {
+        res.end(ctx.body.toString())
+      } else {
+        ctx.set('Content-type', 'application/josn')
+        res.end(JSON.stringify(ctx.body))
+      }
+    }).catch(err => {
+      console.log(err);
+      ctx.status = 500
+      ctx.message = err.message
+    })
+  }
+  listen(port, callback) {
+    this.server = http.createServer(this.handler.bind(this))
+    this.server.listen(port, callback)
   }
 }
